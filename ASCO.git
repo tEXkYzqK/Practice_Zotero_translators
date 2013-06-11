@@ -1,0 +1,19 @@
+function detectWeb(doc, url) {
+var namespace = doc.documentElement.namespaceURI;
+var nsResolver = namespace ? function(prefix) {
+if (prefix == "x" ) return namespace; else return null;
+} : null;
+
+var Title = ZU.xpathText ('//div[@class="content"]/h3', doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext() .textContent;
+
+//var Authors = doc.evaluate ('//div[contains(@class, "field-name-field-authors") and contains(@class, "field-type-text-long") and contains(@class, "field-label-above")]/div[@class="field-items"]/div[contains(@class, "field-item") and contains(@class, "even")]/p', doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext() .textContent;
+
+//var Abstract = doc.evaluate ('//div[@class="content"]/p[3]', doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext() .textContent;
+
+//var AbsNumber = doc.evaluate ('//div[contains(@class, "field-name-field-abstnum") and contains(@class, "field-type-text") and contains(@class, "field-label-above")]/div[@class="field-items"]/div[contains(@class, "field-item") and contains(@class, "even")]/p', doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext() .textContent; 
+
+//var FullCitation = doc.evaluate ('//div[contains(@class, "field-name-field-citation") and contains(@class, "field-type-text-long") and contains(@class, "field-label-above")]/div[@class="field-items"]/div[contains(@class, "field-item") and contains(@class, "even")]/p', doc, nsResolver, XPathResult.ANY_TYPE, null).iterateNext() .textContent;
+
+
+Zotero.debug(Title);
+}
